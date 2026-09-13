@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-
 function EmployeeNavbar({ employeeName, onLogout }) {
   const navigate = useNavigate();
 
