@@ -1,0 +1,21 @@
+:root {
+	--text-color: #18312b;
+	--muted-color: #66746e;
+	--line-color: #dce5df;
+	--surface-color: #ffffff;
+	--accent-color: #18312b;
+	--page-color: #f8f7f1;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--page-color);
+	color: var(--text-color);
+}
+
+.app {
+	min-height: 100vh;
+}

@@ -1,228 +1,112 @@
-* {
-  box-sizing: border-box;
-}
-
 .admin-page {
   min-height: 100vh;
-  background: #f4f7f5;
-  color: #24332d;
-  font-family: Arial, sans-serif;
+  padding: 48px 16px;
 }
 
-.admin-navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 7%;
-  background: #ffffff;
-  border-bottom: 1px solid #dce5df;
-}
-
-.admin-logo {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #1d6048;
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.admin-navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  color: #52675c;
-  font-size: 14px;
-}
-
-.logout-button,
-.approve-button,
-.reject-button {
-  border: 0;
-  border-radius: 4px;
-  cursor: pointer;
-  font: inherit;
-  font-weight: bold;
-}
-
-.logout-button {
-  padding: 9px 16px;
-  background: #174b38;
-  color: #ffffff;
-}
-
-.admin-content {
-  width: 90%;
-  max-width: 1200px;
+.admin-card {
+  width: min(100%, 1100px);
   margin: 0 auto;
-  padding: 45px 0;
+  padding: 32px;
+  background: var(--surface-color);
 }
 
-.admin-heading {
+.admin-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
-.admin-label {
+.admin-header h1 {
   margin: 0 0 8px;
-  color: #1d6048;
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
+  color: var(--text-color);
 }
 
-.admin-heading h1 {
-  margin: 0 0 8px;
-  color: #174b38;
-  font-size: 34px;
-}
-
-.admin-heading p:last-child {
+.admin-header p {
   margin: 0;
-  color: #5d6d64;
+  color: var(--muted-color);
 }
 
-.pending-count {
-  min-width: 130px;
-  padding: 18px;
-  background: #e5f2eb;
-  border: 1px solid #c8dfd0;
-  border-radius: 6px;
+.admin-header a {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.admin-message {
+  margin: 0 0 16px;
+  color: var(--muted-color);
+}
+
+.admin-empty {
+  margin: 0;
+  padding: 24px 0;
+  color: var(--muted-color);
   text-align: center;
 }
 
-.pending-count strong,
-.pending-count span {
-  display: block;
-}
-
-.pending-count strong {
-  color: #174b38;
-  font-size: 28px;
-}
-
-.pending-count span {
-  margin-top: 4px;
-  color: #52675c;
-  font-size: 12px;
-}
-
-.admin-notification {
-  margin: 0 0 20px;
-  padding: 12px 16px;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.admin-notification.success {
-  background: #e2f4e6;
-  color: #28713b;
-}
-
-.admin-notification.error {
-  background: #fce8e8;
-  color: #a33b3b;
-}
-
-.pending-users-section {
-  padding: 26px;
-  background: #ffffff;
-  border: 1px solid #dce5df;
-  border-radius: 6px;
-}
-
-.pending-users-section h2 {
-  margin: 0 0 20px;
-  color: #174b38;
-  font-size: 24px;
-}
-
-.table-wrapper {
+.admin-table-wrapper {
   overflow-x: auto;
 }
 
-.pending-users-table {
+.admin-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
-  text-align: left;
+  color: var(--text-color);
+  font-size: 0.9rem;
 }
 
-.pending-users-table th,
-.pending-users-table td {
+.admin-table th,
+.admin-table td {
   padding: 14px 12px;
-  border-bottom: 1px solid #e4ebe6;
+  border-bottom: 1px solid var(--line-color);
+  text-align: left;
   white-space: nowrap;
 }
 
-.pending-users-table th {
-  background: #f4f7f5;
-  color: #40554b;
+.admin-table th {
+  color: var(--muted-color);
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
 
-.pending-users-table td {
-  color: #52675c;
-}
-
-.action-buttons {
+.admin-actions {
   display: flex;
   gap: 8px;
 }
 
-.approve-button,
-.reject-button {
-  padding: 8px 10px;
+.admin-actions button {
+  padding: 8px 12px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  background: var(--accent-color);
   color: #ffffff;
-  font-size: 12px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
 }
 
-.approve-button {
-  background: #2d8148;
+.admin-actions .admin-reject {
+  background: transparent;
+  color: var(--accent-color);
 }
 
-.reject-button {
-  background: #b44b4b;
-}
-
-.approve-button:disabled,
-.reject-button:disabled {
+.admin-actions button:disabled {
   cursor: wait;
   opacity: 0.6;
 }
 
-.loading-message,
-.empty-message {
-  margin: 0;
-  color: #5d6d64;
-}
+@media (max-width: 600px) {
+  .admin-page {
+    padding: 32px 16px;
+  }
 
-@media (max-width: 650px) {
-  .admin-navbar {
-    align-items: flex-start;
+  .admin-card {
+    padding: 24px 16px;
+  }
+
+  .admin-header {
     flex-direction: column;
-    gap: 15px;
-  }
-
-  .admin-navbar-right {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .admin-content {
-    width: 92%;
-    padding: 30px 0;
-  }
-
-  .admin-heading {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .pending-users-section {
-    padding: 18px;
+    gap: 12px;
   }
 }
