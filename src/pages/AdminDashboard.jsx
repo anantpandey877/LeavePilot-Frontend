@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PendingUsers from "../components/admin/PendingUsers";
+import LogoutButton from "../components/common/LogoutButton";
 import { getPendingUsers, updateUserStatus } from "../services/adminService";
 
 function AdminDashboard() {
@@ -48,7 +49,10 @@ function AdminDashboard() {
 						<h1>Admin Dashboard</h1>
 						<p>Review users waiting for approval.</p>
 					</div>
-					<a href="/">Home</a>
+					<div className="dashboard-actions">
+						<a href="/">Home</a>
+						<LogoutButton />
+					</div>
 				</div>
 
 				{message && <p className="admin-message">{message}</p>}

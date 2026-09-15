@@ -4,6 +4,7 @@ import RegisterPage from "../pages/RegisterPage";
 import AdminDashboard from "../pages/AdminDashboard";
 import EmployeeDashboard from "../pages/EmployeeDashboard";
 import ManagerDashboard from "../pages/ManagerDashboard";
+import ProtectedRoute from "./common/ProtectedRoute";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App(){
@@ -14,9 +15,30 @@ function App(){
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/employee" element={<EmployeeDashboard />} />
-          <Route path="/manager" element={<ManagerDashboard />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute allowedRoles={["ADMIN"]}>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/employee"
+            element={
+              <ProtectedRoute allowedRoles={["EMPLOYEE"]}>
+                <EmployeeDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/manager"
+            element={
+              <ProtectedRoute allowedRoles={["MANAGER"]}>
+                <ManagerDashboard />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </div>
     </BrowserRouter>

@@ -28,6 +28,23 @@
   font-weight: 600;
 }
 
+.dashboard-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logout-button {
+  padding: 8px 12px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--accent-color);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
 .dashboard-section {
   margin-top: 32px;
 }
@@ -108,6 +125,70 @@
   color: #a33c3c;
 }
 
+.manager-request-list {
+  display: grid;
+  gap: 12px;
+}
+
+.manager-request {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px;
+  border: 1px solid var(--line-color);
+}
+
+.manager-request h3 {
+  margin: 0 0 8px;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.manager-request p {
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.manager-request-actions {
+  display: grid;
+  flex-shrink: 0;
+  justify-items: end;
+  gap: 12px;
+}
+
+.manager-request-actions button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  background: var(--accent-color);
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+}
+
+.manager-request-actions .manager-reject-button {
+  background: transparent;
+  color: var(--accent-color);
+}
+
+.manager-request-actions button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+  .manager-request {
+    flex-direction: column;
+  }
+
+  .manager-request-actions {
+    justify-items: start;
+  }
+}
+
 .leave-form {
   display: grid;
   max-width: 520px;
@@ -155,6 +236,11 @@
   .dashboard-heading {
     flex-direction: column;
     gap: 12px;
+  }
+
+  .dashboard-actions {
+    align-self: stretch;
+    justify-content: space-between;
   }
 
   .leave-card-grid {

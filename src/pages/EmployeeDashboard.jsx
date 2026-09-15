@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ApplyLeaveForm from "../components/employee/ApplyLeaveForm";
 import LeaveCard from "../components/employee/LeaveCard";
 import MyLeaves from "../components/employee/MyLeaves";
+import LogoutButton from "../components/common/LogoutButton";
 import { getLeaveBalance, getMyLeaves } from "../services/emoloyeeService";
 
 function EmployeeDashboard() {
@@ -43,7 +44,10 @@ function EmployeeDashboard() {
 					<h1>Employee Dashboard</h1>
 					<p>Welcome to your LeavePilot dashboard.</p>
 				</div>
-				<a href="/">Home</a>
+				<div className="dashboard-actions">
+					<a href="/">Home</a>
+					<LogoutButton />
+				</div>
 			</div>
 
 			<section className="dashboard-section">
