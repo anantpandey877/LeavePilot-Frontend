@@ -7,6 +7,7 @@ import './styles/landing.css'
 import './styles/footer.css'
 import './styles/auth.css'
 import './styles/admin.css'
+import './styles/dashboard.css'
 import App from './components/App.jsx'
 import faviconUrl from './assets/favicon.ico'
 

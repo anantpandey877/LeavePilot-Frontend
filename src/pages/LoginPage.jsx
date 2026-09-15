@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { loginUser } from "../services/authService";
 
 function LoginPage() {
+	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [message, setMessage] = useState("");
@@ -15,7 +17,14 @@ function LoginPage() {
 		try {
 			const user = await loginUser({ email, password });
 			localStorage.setItem("leavePilotUser", JSON.stringify(user));
-			setMessage(`Welcome, ${user.fullName}. Login successful.`);
+
+			if (user.role === "ADMIN") {
+				navigate("/admin");
+			} else if (user.role === "MANAGER") {
+				navigate("/manager");
+			} else {
+				navigate("/employee");
+			}
 		} catch (error) {
 			const errorMessage = error.response?.data?.message;
 			setMessage(errorMessage || "Unable to connect to the server.");

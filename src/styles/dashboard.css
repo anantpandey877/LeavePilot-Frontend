@@ -1,0 +1,163 @@
+.dashboard-page {
+  width: min(100% - 32px, 960px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.dashboard-page h1 {
+  margin: 0 0 12px;
+  color: var(--text-color);
+}
+
+.dashboard-page p {
+  margin: 0;
+  color: var(--muted-color);
+}
+
+.dashboard-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.dashboard-heading a {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.dashboard-section {
+  margin-top: 32px;
+}
+
+.dashboard-section h2 {
+  margin: 0 0 16px;
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.dashboard-message {
+  margin-bottom: 16px !important;
+  color: var(--muted-color);
+}
+
+.leave-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.leave-card,
+.dashboard-placeholder {
+  padding: 24px;
+  background: var(--surface-color);
+}
+
+.leave-card h2 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.leave-card p {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.dashboard-placeholder p {
+  line-height: 1.5;
+}
+
+.leave-list {
+  display: grid;
+  gap: 12px;
+}
+
+.leave-request {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--line-color);
+}
+
+.leave-request h3 {
+  margin: 0 0 8px;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.leave-request p {
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.leave-status {
+  color: var(--muted-color);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.leave-status-approved {
+  color: #2d7047;
+}
+
+.leave-status-rejected {
+  color: #a33c3c;
+}
+
+.leave-form {
+  display: grid;
+  max-width: 520px;
+  gap: 8px;
+}
+
+.leave-form label {
+  font-weight: 600;
+}
+
+.leave-form input,
+.leave-form select,
+.leave-form textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 10px;
+  border: 1px solid var(--line-color);
+  border-radius: 4px;
+  font: inherit;
+}
+
+.leave-form button {
+  width: fit-content;
+  margin-top: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  background: var(--accent-color);
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.leave-form button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.leave-form-message {
+  margin-top: 8px !important;
+}
+
+@media (max-width: 640px) {
+  .dashboard-heading {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .leave-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
