@@ -3,7 +3,7 @@ import ApplyLeaveForm from "../components/employee/ApplyLeaveForm";
 import LeaveCard from "../components/employee/LeaveCard";
 import MyLeaves from "../components/employee/MyLeaves";
 import LogoutButton from "../components/common/LogoutButton";
-import { getLeaveBalance, getMyLeaves } from "../services/emoloyeeService";
+import { getLeaveBalance, getMyLeaves } from "../services/employeeService";
 
 function EmployeeDashboard() {
 	const [balance, setBalance] = useState(null);

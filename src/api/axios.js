@@ -1,8 +1,43 @@
 import axios from "axios";
 
-export default axios.create({
-  baseURL: "http://accc505eb12be488583468dea61dfff5-148697153.us-east-1.elb.amazonaws.com/leavepilot/api",
+const api = axios.create({
+  baseURL: "http://localhost:8080/leavepilot/api",
   headers: {
     "Content-Type": "application/json",
   },
 });
+
+api.interceptors.request.use((config) => {
+  const savedUser = localStorage.getItem("leavePilotUser");
+
+  if (savedUser) {
+    try {
+      const user = JSON.parse(savedUser);
+
+      if (user.token) {
+        config.headers.Authorization = `Bearer ${user.token}`;
+      }
+    } catch {
+      localStorage.removeItem("leavePilotUser");
+    }
+  }
+
+  return config;
+});
+
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem("leavePilotUser");
+
+      if (window.location.pathname !== "/login") {
+        window.location.assign("/login");
+      }
+    }
+
+    return Promise.reject(error);
+  },
+);
+
+export default api;

@@ -6,7 +6,7 @@ function RegisterPage() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
-	const [role, setRole] = useState("employee");
+	const [role, setRole] = useState("EMPLOYEE");
 	const [department, setDepartment] = useState("");
 	const [message, setMessage] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { applyForLeave } from "../../services/emoloyeeService";
+import { applyForLeave } from "../../services/employeeService";
 
 function ApplyLeaveForm({ userId, onSuccess }) {
 	const [leaveType, setLeaveType] = useState("CASUAL");

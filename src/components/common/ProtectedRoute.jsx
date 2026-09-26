@@ -7,13 +7,21 @@ function ProtectedRoute({ allowedRoles, children }) {
     return <Navigate to="/login" replace />;
   }
 
-  try {
-    const user = JSON.parse(savedUser);
+  let user;
 
-    if (!user.role || !allowedRoles.includes(user.role)) {
-      return <Navigate to="/" replace />;
-    }
+  try {
+    user = JSON.parse(savedUser);
   } catch {
+    localStorage.removeItem("leavePilotUser");
+    return <Navigate to="/login" replace />;
+  }
+
+  if (
+    !user.token ||
+    user.status !== "APPROVED" ||
+    !user.role ||
+    !allowedRoles.includes(user.role)
+  ) {
     localStorage.removeItem("leavePilotUser");
     return <Navigate to="/login" replace />;
   }

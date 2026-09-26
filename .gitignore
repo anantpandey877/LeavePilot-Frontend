@@ -7,10 +7,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+node_modules/
+dist/
+dist-ssr/
 *.local
+*.cache
 
 # Environment files
 .env
@@ -19,6 +20,7 @@ dist-ssr
 
 # Test and tool output
 coverage/
+.nyc_output/
 .vite/
 
 # Editor directories and files
@@ -31,3 +33,7 @@ coverage/
 *.njsproj
 *.sln
 *.sw?
+
+# Keep only the project README tracked
+*.md
+!README.md
