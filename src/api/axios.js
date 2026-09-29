@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/leavepilot/api",
+  baseURL: "https://135-235-252-64.sslip.io/leavepilot/api",
   headers: {
     "Content-Type": "application/json",
   },
