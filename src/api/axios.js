@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://135-235-252-64.sslip.io/leavepilot/api",
+  baseURL: "https://leavepilot-tm.trafficmanager.net/leavepilot/api",
   headers: {
     "Content-Type": "application/json",
   },
