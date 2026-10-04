@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://leavepilot-tm.trafficmanager.net/leavepilot/api",
+  baseURL:
+    "http://ae8ef0dc2bc064d3d99721c4cc254b92-1856738635.us-east-1.elb.amazonaws.com/leavepilot/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -37,7 +38,7 @@ api.interceptors.response.use(
     }
 
     return Promise.reject(error);
-  },
+  }
 );
 
 export default api;
