@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL:
-    "http://ae8ef0dc2bc064d3d99721c4cc254b92-1856738635.us-east-1.elb.amazonaws.com/leavepilot/api",
+    "http://ab50905c6770740418608ecf2432a607-1018660944.us-west-2.elb.amazonaws.com/leavepilot/api",
   headers: {
     "Content-Type": "application/json",
   },
